@@ -4,7 +4,7 @@ const helper = require('../helper')
 const pool = new Pool({
     user: 'me',
     host: 'localhost',
-    database: 'twedit',
+    database: 'cakcak',
     password: 'password',
     port: 5432,
 })
