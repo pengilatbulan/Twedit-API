@@ -7,7 +7,16 @@ const pool = new Pool({
     database: 'cakcak',
     password: 'vq7TCgO99HCsu3JNcQmNtoQfLTlFoIwM',
     port: 5432,
-})
+});
+
+pool.query('SELECT NOW()', (err, res) => {
+    if (err){
+        console.error('Error executing query', err.stack);
+    } else {
+        console.log('Connected to PostgreSQL database at', res.row[0].now);
+    }
+    pool.end();
+});
 
 // access token validator
 async function validateAccessToken(id,token){
