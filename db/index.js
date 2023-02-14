@@ -1,16 +1,17 @@
-const Pool = require('pg').Pool
 const helper = require('../helper')
 
+const { Pool } = require('pg');
+
 const pool = new Pool({
-    user: 'me',
-    host: 'dpg-cfeb7gsgqg46rpn7ao20-a',
-    database: 'cakcak',
-    password: 'vq7TCgO99HCsu3JNcQmNtoQfLTlFoIwM',
-    port: 5432,
-    ssl: {
-        rejectUnauthorized: false,
-    },
-})
+  user: 'me',
+  host: 'dpg-cfeb7gsgqg46rpn7ao20-a',
+  database: 'cakcak',
+  password: 'vq7TCgO99HCsu3JNcQmNtoQfLTlFoIwM',
+  port: 5432,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
 
 pool.query('SELECT NOW()', (err, res) => {
     if (err){
@@ -19,7 +20,7 @@ pool.query('SELECT NOW()', (err, res) => {
         console.log('Connected to PostgreSQL database at', res.row[0].now);
     }
     pool.end();
-})
+});
 
 // access token validator
 async function validateAccessToken(id,token){
