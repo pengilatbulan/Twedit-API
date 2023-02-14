@@ -3,7 +3,7 @@ const helper = require('../helper')
 
 const pool = new Pool({
     user: 'me',
-    host: 'dpg-cfeb7gsgqg46rpn7ao20-a.singapore-postgres.render.com',
+    host: 'dpg-cfeb7gsgqg46rpn7ao20-a',
     database: 'cakcak',
     password: 'vq7TCgO99HCsu3JNcQmNtoQfLTlFoIwM',
     port: 5432,
