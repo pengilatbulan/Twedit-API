@@ -7,6 +7,9 @@ const pool = new Pool({
     database: 'cakcak',
     password: 'vq7TCgO99HCsu3JNcQmNtoQfLTlFoIwM',
     port: 5432,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 })
 
 pool.query('SELECT NOW()', (err, res) => {
