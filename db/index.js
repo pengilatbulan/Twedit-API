@@ -3,11 +3,11 @@ const helper = require('../helper')
 
 const pool = new Pool({
     user: 'me',
-    host: 'dpg-cfeb7gsgqg46rpn7ao20-a.singapore-postgres.render.com',
+    host: 'dpg-cfeb7gsgqg46rpn7ao20-a',
     database: 'cakcak',
     password: 'vq7TCgO99HCsu3JNcQmNtoQfLTlFoIwM',
     port: 5432,
-});
+})
 
 pool.query('SELECT NOW()', (err, res) => {
     if (err){
@@ -16,7 +16,7 @@ pool.query('SELECT NOW()', (err, res) => {
         console.log('Connected to PostgreSQL database at', res.row[0].now);
     }
     pool.end();
-});
+})
 
 // access token validator
 async function validateAccessToken(id,token){
